@@ -9,22 +9,27 @@ const PageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background: #f9fafb;
+  //font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const Box = styled.div`
-  border: 1px solid;
-  border-radius: 4px;
+  border: 1px solid lightgray;
   background: white;
+  border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+  overflow: hidden;
 `;
 
 const BoxHeader = styled.div`
   padding: 15px;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid lightgray;
+  background: #fcfcfc;
 `;
 
 const BoxBody = styled.div`
-  padding: 15px;
+  //padding: 15px;
 `;
 
 class App extends Component {

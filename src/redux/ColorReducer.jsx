@@ -1,7 +1,7 @@
 const ADD_COLOR = 'ADD_COLOR'
 
 const initialValues = {
-  colors: []
+  colors: ['#ffb12c', '#55b15b']
 }
 
 export function reducer(state = initialValues, action) {
