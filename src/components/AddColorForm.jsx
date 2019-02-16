@@ -2,6 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { actions } from '../redux/ColorReducer'
 import { connect } from 'react-redux'
+import MaskedInput from 'react-text-mask'
 
 class AddColorForm extends React.Component {
   state = {
@@ -17,14 +18,16 @@ class AddColorForm extends React.Component {
     const { actions } = this.props
 
     actions.addColor(this.state.color)
+    this.setState({ color: '' })
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
-        <input
+        <MaskedInput
           type="text"
           value={this.state.color}
+          mask={['#', /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/]}
           onChange={this.handleChange.bind(this)}
         />
         <button>Add</button>
