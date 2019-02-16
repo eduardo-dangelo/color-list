@@ -10,7 +10,6 @@ const PageWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   background: #f9fafb;
-  //font-family: 'Open Sans Condensed', sans-serif;
   font-family: 'Roboto', sans-serif;
 `;
 
@@ -30,9 +29,7 @@ const BoxHeader = styled.div`
   align-items: stretch;
 `;
 
-const BoxBody = styled.div`
-  //padding: 15px;
-`;
+const BoxBody = styled.div``;
 
 class App extends Component {
   render() {
