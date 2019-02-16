@@ -26,6 +26,8 @@ const BoxHeader = styled.div`
   padding: 15px;
   border-bottom: 1px solid lightgray;
   background: #fcfcfc;
+  display: flex;
+  align-items: stretch;
 `;
 
 const BoxBody = styled.div`

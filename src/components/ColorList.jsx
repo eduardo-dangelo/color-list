@@ -19,8 +19,32 @@ const ColorRow = styled.div`
   border-bottom: 1px solid lightgray;
   color: #696969;
   
+  span {
+    position: relative;
+    
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: ${({ color }) => color ? color : '#696969'};
+      bottom: -2px;
+      transition: .4s ease;
+      
+    }
+    
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+  
   &:hover {
     background: #f9f9f9;
+    span:before {
+        width: 100%;
+      }
   }
 `;
 
@@ -47,9 +71,9 @@ class ColorList extends React.PureComponent {
           }
 
           return (
-            <ColorRow key={key}>
+            <ColorRow key={key} color={color}>
               <DisplayColor color={color}/>
-              {color}
+              <span>{color}</span>
             </ColorRow>
           )
         })}

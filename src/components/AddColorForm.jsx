@@ -9,7 +9,7 @@ const Input = styled(MaskedInput)`
   border-radius: 4px 0 0 4px;
   border: 1px solid #868686;
   border-right: none;
-  padding: 5px;
+  padding: 5px 10px;
   box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
   background: #f8f9fa;
   height: 40px;
@@ -46,6 +46,10 @@ class AddColorForm extends React.Component {
     event.preventDefault()
     const { actions } = this.props
 
+    if (this.state.color.length < 4) {
+      return
+    }
+
     actions.addColor(this.state.color)
     this.setState({ color: '' })
   }
@@ -57,7 +61,15 @@ class AddColorForm extends React.Component {
           type="text"
           value={this.state.color}
           guide={false}
-          mask={['#', /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/, /[0-9A-Fa-f]/]}
+          mask={[
+            '#',
+            /[0-9A-Fa-f]/,
+            /[0-9A-Fa-f]/,
+            /[0-9A-Fa-f]/,
+            /[0-9A-Fa-f]/,
+            /[0-9A-Fa-f]/,
+            /[0-9A-Fa-f]/
+          ]}
           onChange={this.handleChange.bind(this)}
         />
         <Button>Add</Button>
