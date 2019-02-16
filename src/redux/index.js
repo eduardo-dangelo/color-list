@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import { reducer as colorList } from './ColorReducer'
+import { reducer as store } from './ColorReducer'
 
 
 const rootReducer = combineReducers({
-  colorList,
+  store,
 })
 
 export default rootReducer

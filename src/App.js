@@ -1,28 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import AddColorForm from './components/AddColorForm'
+import ColorList from './components/ColorList'
+
+const PageWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+const Box = styled.div`
+  border: 1px solid;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+`;
+
+const BoxHeader = styled.div`
+  padding: 15px;
+  border-bottom: 1px solid;
+`;
+
+const BoxBody = styled.div`
+  padding: 15px;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <PageWrapper>
+        <Box>
+          <BoxHeader>
+            <AddColorForm/>
+          </BoxHeader>
+          <BoxBody>
+            <ColorList/>
+          </BoxBody>
+        </Box>
+      </PageWrapper>
+    )
   }
 }
 
-export default App;
+export default App
